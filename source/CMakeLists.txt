@@ -28,7 +28,7 @@ add_executable(study ${MAIN})
 
 # add custom target for valgrind
 add_custom_target(run-valgrind
-	COMMAND valgrind --leak-check=full ./study ARGS
+	COMMAND valgrind --leak-check=full ./study
 	DEPENDS study
 	COMMENT "Running Valgrind on study executable."
 	VERBATIM
