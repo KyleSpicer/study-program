@@ -1,5 +1,6 @@
 #include <stdbool.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 #include "../include/directory_ops.h"
 #include "../include/driver.h"
@@ -12,7 +13,6 @@ main(int argc, char *argv[])
 
     char *study_docs_dir = NULL;
     char *resolved_path  = NULL; // path if directory is found.
-    bool  path_provided  = false;
 
     if (1 == argc)
     {
@@ -22,7 +22,6 @@ main(int argc, char *argv[])
     else if (2 == argc)
     {
         study_docs_dir = argv[1];
-        path_provided  = true;
     }
 
     else
@@ -42,9 +41,11 @@ main(int argc, char *argv[])
     }
 
     // TODO: List contents of study directory.
-
+    list_dir_contents(resolved_path);
     printf("Study docs dir: %s\n", resolved_path);
 
+CLEAN_UP_PATH:
+    free(resolved_path);
 EXIT_MAIN:
     return exit_value;
 }

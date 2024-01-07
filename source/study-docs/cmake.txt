@@ -1,7 +1,0 @@
-# Reference: Professional CMake: A Practical Guide
-# Version: 16th Edition
-# Author: Craig Scott
-
-This is the first question?   This is the first answer.
-This is the second question?   This is the second answer.
-This is the third question?   This is the third answer.
